@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.card {
+  position: relative;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.glass-card {
+  /* --- Fill --- */
+  /* #D9D9D9 with 10% opacity */
+  background-color: rgba(217, 217, 217, 0.1);
+
+  /* --- Stroke --- */
+  /* Inside stroke, 1px weight, #F8F8F8 with 26% opacity */
+  border: 1px solid rgba(248, 248, 248, 0.26);
+
+  /* --- Effects --- */
+
+  /* 1. Background Blur: 100px */
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px); /* For Safari support */
+
+  /* 2. Inner Shadows */
+  /* First Inner Shadow (Image 2): X=75.83, Y=-75.83, Blur=75.83, Color=#A5A5A5 @ 10% */
+  /* Second Inner Shadow (Image 3): X=-75.83, Y=75.83, Blur=75.83, Color=#FFFFFF @ 10% */
+  box-shadow:
+    inset 75.83px -75.83px 75.83px 0px rgba(165, 165, 165, 0.1),
+    inset -75.83px 75.83px 75.83px 0px rgba(255, 255, 255, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.glow {
+  position: absolute;
+  width: 740px;
+  height: 800px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #dc00d3, #12b4b4);
+  filter: blur(200px);
+  opacity: 1;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.test {
+  border-radius: 14px;
+  opacity: 1;
+
+  /* Radial gradient fill at 30% opacity */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(220, 0, 211, 0.4) 0%,
+    rgba(18, 180, 180, 0) 100%
+  );
+
+  /* Background blur (80px uniform) */
+  backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(80px);
 }

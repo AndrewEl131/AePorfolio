@@ -5,7 +5,7 @@ type ProjectProps = {
   description: string;
   imageUrl: string;
   githubUrl: string;
-  twitterUrl: string;
+  siteUrl: string;
   linkedinUrl: string;
   side: "left" | "right";
 };
@@ -15,15 +15,15 @@ export default function Project({
   description,
   imageUrl,
   githubUrl,
-  twitterUrl,
+  siteUrl,
   linkedinUrl,
   side,
 }: ProjectProps) {
   return side === "left" ? (
     <div className="w-full lg:h-[700px]">
       <div className="xl:w-[1160px] md:w-[700px] w-full lg:h-[340px] flex lg:flex-row flex-col relative mx-auto md:px-[0px] px-[20px]">
-        <div className="lg:w-[620px] md:w-[700px] w-full lg:h-full lg:space-y-[35px] z-10">
-          <div className="w-full lg:space-y-[50px] space-y-[20px]">
+        <div className="lg:w-[620px] md:w-[700px] w-full lg:h-full lg:space-y-[35px] z-10 ">
+          <div className="w-full lg:space-y-[50px] space-y-[20px] fade-in-up flex flex-col lg:items-start lg:mt-0 mt-[40px]">
             <div className="space-y-[7px]">
               <h1 className="text-[16px] josefin-sans font-semibold tracking-[2%] text-[#5DFFFF]">
                 Featured Project
@@ -43,8 +43,8 @@ export default function Project({
                 <a href={githubUrl} target="_blank" rel="noopener noreferrer">
                   <img src="/icons/git.png" alt="github" />
                 </a>
-                <a href={twitterUrl} target="_blank" rel="noopener noreferrer">
-                  <img src="/icons/twitter.png" alt="twitter" />
+                <a href={siteUrl} target="_blank" rel="noopener noreferrer">
+                  <img src="/icons/link.png" alt="site" />
                 </a>
                 <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
                   <img src="/icons/linkedin.png" alt="linkedin" />
@@ -97,8 +97,8 @@ export default function Project({
                 <a href={githubUrl} target="_blank" rel="noopener noreferrer">
                   <img src="/icons/git.png" alt="github" />
                 </a>
-                <a href={twitterUrl} target="_blank" rel="noopener noreferrer">
-                  <img src="/icons/twitter.png" alt="twitter" />
+                <a href={siteUrl} target="_blank" rel="noopener noreferrer">
+                  <img src="/icons/link.png" alt="site" />
                 </a>
                 <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
                   <img src="/icons/linkedin.png" alt="linkedin" />
